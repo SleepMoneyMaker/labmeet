@@ -14,26 +14,9 @@ Trend: ▁▂▃▃▄▅▅▆▆▇▇█
 
 ## What it does
 
-Every time the agent finishes a 5-minute experiment and commits (or reverts), you get a Telegram message with the val_bpb result, whether it improved, and what changed. You reply to steer the research direction. The agent never knows `labmeet` exists — it just reads `program.md` as usual, and `labmeet` is how you edit it from your phone.
+Every time the agent finishes a 5-minute experiment and commits (or reverts), you get a Telegram message with the result, whether it improved, and what changed. You reply to steer the research direction. The agent never knows `labmeet` exists — it just reads `program.md` as usual, and `labmeet` is how you edit it from your phone.
 
-```
-autoresearch agent loop              labmeet
-┌─────────────────────────┐          ┌─────────────────────────┐
-│ read program.md         │◀──file───│ /steer writes to        │
-│ modify train.py         │          │ program.md              │
-│ uv run train.py         │          │                         │
-│ check val_bpb           │          │ poll git log (30s)      │
-│ keep or revert          │───git──▶ │ detect new commit       │
-│ commit to branch        │          │ parse val_bpb           │
-│ repeat                  │          │ send to Telegram        │
-└─────────────────────────┘          └─────────────────────────┘
-                                              ▲ ▼
-                                        ┌───────────┐
-                                        │ you, in   │
-                                        │ bed, on   │
-                                        │ Telegram   │
-                                        └───────────┘
-```
+![labmeet architecture](diagram.svg)
 
 ## Quick start
 
@@ -43,7 +26,7 @@ autoresearch agent loop              labmeet
 # 1. Create a Telegram bot: message @BotFather → /newbot → copy the token
 
 # 2. Install the one dependency
-pip install python-telegram-bot
+pip install "python-telegram-bot[job-queue]"
 
 # 3. Run labmeet alongside your autoresearch agent
 export TELEGRAM_BOT_TOKEN="your-token"

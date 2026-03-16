@@ -1,0 +1,71 @@
+<svg width="680" viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg">
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  .th { font-size: 14px; font-weight: 600; }
+  .ts { font-size: 12px; font-weight: 400; }
+  .box-purple { fill: #EEEDFE; stroke: #534AB7; }
+  .box-teal { fill: #E1F5EE; stroke: #0F6E56; }
+  .box-amber { fill: #FAEEDA; stroke: #854F0B; }
+  .box-gray { fill: #F1EFE8; stroke: #B4B2A9; }
+  .text-purple { fill: #3C3489; }
+  .text-teal { fill: #085041; }
+  .text-amber { fill: #633806; }
+  .text-gray { fill: #5F5E5A; }
+  .text-muted { fill: #888780; }
+  .arr { stroke: #888780; stroke-width: 1.5; }
+  @media (prefers-color-scheme: dark) {
+    .box-purple { fill: #3C3489; stroke: #AFA9EC; }
+    .box-teal { fill: #085041; stroke: #5DCAA5; }
+    .box-amber { fill: #633806; stroke: #FAC775; }
+    .box-gray { fill: #444441; stroke: #B4B2A9; }
+    .text-purple { fill: #CECBF6; }
+    .text-teal { fill: #9FE1CB; }
+    .text-amber { fill: #FAC775; }
+    .text-gray { fill: #D3D1C7; }
+    .text-muted { fill: #B4B2A9; }
+    .arr { stroke: #B4B2A9; }
+  }
+</style>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<rect class="box-purple" x="40" y="40" width="250" height="180" rx="12" stroke-width="0.5"/>
+<text class="th text-purple" x="165" y="68" text-anchor="middle">autoresearch agent</text>
+
+<rect class="box-gray" x="60" y="88" width="210" height="28" rx="6" stroke-width="0.5"/>
+<text class="ts text-gray" x="165" y="106" text-anchor="middle">read program.md</text>
+
+<rect class="box-gray" x="60" y="124" width="210" height="28" rx="6" stroke-width="0.5"/>
+<text class="ts text-gray" x="165" y="142" text-anchor="middle">modify train.py → run 5 min</text>
+
+<rect class="box-gray" x="60" y="160" width="210" height="28" rx="6" stroke-width="0.5"/>
+<text class="ts text-gray" x="165" y="178" text-anchor="middle">keep or revert → commit</text>
+
+<rect class="box-teal" x="390" y="40" width="250" height="180" rx="12" stroke-width="0.5"/>
+<text class="th text-teal" x="515" y="68" text-anchor="middle">labmeet</text>
+
+<rect class="box-gray" x="410" y="88" width="210" height="28" rx="6" stroke-width="0.5"/>
+<text class="ts text-gray" x="515" y="106" text-anchor="middle">poll git log every 30s</text>
+
+<rect class="box-gray" x="410" y="124" width="210" height="28" rx="6" stroke-width="0.5"/>
+<text class="ts text-gray" x="515" y="142" text-anchor="middle">parse metric, detect change</text>
+
+<rect class="box-gray" x="410" y="160" width="210" height="28" rx="6" stroke-width="0.5"/>
+<text class="ts text-gray" x="515" y="178" text-anchor="middle">send update to Telegram</text>
+
+<rect class="box-amber" x="390" y="270" width="250" height="44" rx="12" stroke-width="0.5"/>
+<text class="th text-amber" x="515" y="296" text-anchor="middle">you, in bed, on Telegram</text>
+
+<line x1="290" y1="106" x2="388" y2="106" class="arr" marker-end="url(#arrow)"/>
+<text class="ts text-muted" x="340" y="98" text-anchor="middle">git</text>
+
+<line x1="390" y1="178" x2="292" y2="178" class="arr" marker-end="url(#arrow)"/>
+<text class="ts text-muted" x="340" y="170" text-anchor="middle">program.md</text>
+
+<line x1="515" y1="222" x2="515" y2="268" class="arr" marker-end="url(#arrow)"/>
+<line x1="505" y1="268" x2="505" y2="222" class="arr" marker-end="url(#arrow)"/>
+<text class="ts text-muted" x="555" y="242" text-anchor="start">results ↓  /steer ↑</text>
+</svg>
